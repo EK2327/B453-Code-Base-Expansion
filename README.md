@@ -1,4 +1,4 @@
-#Code Bade Expansion:
+# Code Bade Expansion:
 This repository represents the first "code base expansion" project for CSCI-B453 Game Development.
 I am expanding upon the code base provided for the game Dualikiwi developed for the Global Game Jam 2022.
 
