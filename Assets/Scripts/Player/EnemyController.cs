@@ -11,6 +11,8 @@ public class EnemyController : KiwiController
 
     public Dictionary<Direction, Vector3> directionMap = new Dictionary<Direction, Vector3>();
 
+    private bool isMirrored = false;
+
     public void Start()
     {
         directionMap.Add(Direction.RIGHT, Vector3.right);
@@ -30,11 +32,25 @@ public class EnemyController : KiwiController
                 if (horizontalMovement > 0)
                 {
                     // player is moving Right
-                    direction = directionMap[OnRightPress];
+                    if (isMirrored)
+                    {
+                        direction = directionMap[OnLeftPress];
+                    }
+                    else
+                    {
+                        direction = directionMap[OnRightPress];
+                    }
                 }
                 else
                 {
-                    direction = directionMap[OnLeftPress];
+                    if (isMirrored)
+                    {
+                        direction = directionMap[OnRightPress];
+                    }
+                    else
+                    {
+                        direction = directionMap[OnLeftPress];
+                    }
                 }
 
                 receivedValidInput = true;
@@ -46,12 +62,26 @@ public class EnemyController : KiwiController
                 if (verticalMovement > 0)
                 {
                     // player moving Up
-                    direction = directionMap[OnUpPress];
+                    if (isMirrored)
+                    {
+                        direction = directionMap[OnDownPress];
+                    }
+                    else
+                    {
+                        direction = directionMap[OnUpPress];
+                    }
                 }
                 else
                 {
                     // player moving Down
-                    direction = directionMap[OnDownPress];
+                    if (isMirrored)
+                    {
+                        direction = directionMap[OnUpPress];
+                    }
+                    else
+                    {
+                        direction = directionMap[OnDownPress];
+                    }
                 }
                 receivedValidInput = true;
             }
