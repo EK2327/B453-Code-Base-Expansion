@@ -19,6 +19,7 @@ public class EnemyController : KiwiController
         directionMap.Add(Direction.LEFT, Vector3.left);
         directionMap.Add(Direction.UP, Vector3.up);
         directionMap.Add(Direction.DOWN, Vector3.down);
+        MyEvents.MirrorTouched.AddListener(FlipDirections);
     }
     private void FixedUpdate()
     {
@@ -111,6 +112,11 @@ public class EnemyController : KiwiController
     public override void DeathEffect()
     {
         StartCoroutine(LevelMenus.Singleton.ShowVictoryMenu());
+    }
+
+    private void FlipDirections()
+    {
+        isMirrored = !isMirrored;
     }
 
     public enum Direction
