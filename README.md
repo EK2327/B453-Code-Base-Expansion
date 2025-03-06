@@ -8,7 +8,7 @@ I am expanding on the original game by adding a new interactable item that "mirr
 The mirror interactable has been added to the new levels 16 and 17, which are designed specifically to make use of the mirror's properties.
 
 ## CBE 2
-
+In the second part of the code base expansion, I am adding a new button and door mechanic to the game. There will be two types of buttons, one that can be activated by the player and one that can be activated by the enemy. Each button will have matching doors that can be opened by activating the corresponding button. I will also add a local 2-player mode, where each player moves separately and the respective enemy will move when the assigned player moves. This will mean that the player 1 enemy will only move when player 1 moves. In this gamemode the level will be failed if either player dies and will be completed when both enemy kiwis have been defeated.
 
 ## GGJ-2022: DualiKiwi
 Repository for this year's Global Game Jam project
