@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
+    /*
+     * -*- Door Buttons must be on the Ignore Raycast Layer so that Kiwis can walk over them -*-
+     */
     enum ButtonTypes
     {
         PlayerButton,
@@ -31,7 +34,7 @@ public class DoorButton : MonoBehaviour
             {
                 foreach(GameObject door in doors)
                 {
-                    door.SetActive(false);
+                    door.GetComponent<Door>().Open();
                 }
             }
         }
