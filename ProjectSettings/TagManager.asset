@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Music
+  - Enemy Door
+  - Player Door
   layers:
   - Default
   - TransparentFX
