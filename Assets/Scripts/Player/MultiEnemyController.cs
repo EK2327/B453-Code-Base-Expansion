@@ -5,7 +5,7 @@ using UnityEngine;
 public class MultiEnemyController : EnemyController
 {
     [SerializeField] PlayerNumber playerNumber;
-    private int enemiesLeft = 1;
+    private int enemiesLeft;
 
     // Update is called once per frame
     protected override void Update()
@@ -73,6 +73,7 @@ public class MultiEnemyController : EnemyController
 
     public override void DeathEffect()
     {
+        enemiesLeft = 0;
         //Get all enemies in scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -84,6 +85,7 @@ public class MultiEnemyController : EnemyController
                 enemiesLeft++;
             }
         }
+        Debug.Log("Enemies Left: " + enemiesLeft);
 
         //If all enemies are defeated, show victory Screen
         if (enemiesLeft == 0)
