@@ -13,7 +13,7 @@ public class EnemyController : KiwiController
 
     private bool isMirrored = false;
 
-    public void Start()
+    public virtual void Start()
     {
         directionMap.Add(Direction.RIGHT, Vector3.right);
         directionMap.Add(Direction.LEFT, Vector3.left);
